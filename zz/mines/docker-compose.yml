@@ -1,0 +1,12 @@
+version: "3"
+services:
+    mines:
+        volumes:
+            - /root/mines:/root/mines
+        ports:
+            - 2330:3000
+        container_name: mines
+        network_mode: bridge
+        image: ubuntu
+        restart: always
+        command: /root/mines/mines # tail -f /dev/null

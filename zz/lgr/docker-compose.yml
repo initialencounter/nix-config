@@ -1,0 +1,12 @@
+version: "3"
+services:
+    lgr:
+        volumes:
+            - /root/lgr:/root/lgr
+        ports:
+            - 8081:8081
+        container_name: lgr
+        network_mode: bridge
+        image: lgr/lgr
+        restart: always
+        command: bash -c "cd /root/lgr && ./Lagrange.OneBot" # tail -f /dev/null

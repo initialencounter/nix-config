@@ -1,0 +1,15 @@
+version: "3"
+services:
+    mysql:
+        environment:
+            - MYSQL_ROOT_PASSWORD=''
+        volumes:
+            - /root/mysql/data/conf.d/:/etc/mysql/conf.d 
+            - /root/mysql/data/mysql/:/var/lib/mysql
+        ports:
+            - 3306:3306
+        container_name: mysql
+        network_mode: bridge
+        image: mysql
+        restart: always
+        command: /bin/bash
