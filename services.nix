@@ -13,10 +13,14 @@
     };
 
     # Enable the X11 windowing system.
-    services.xserver  = {
+    services.xserver.enable = true;
+    services.xserver.desktopManager.gnome.enable = true;
+    services.displayManager.sddm = {
+	enable = true;
+        wayland = {
         enable = true;
-        desktopManager.plasma5.enable = true;
+        compositor = "kwin";
+	};
     };
-    services.displayManager.sddm.enable = true;
     programs.fish.enable = true;
 }
