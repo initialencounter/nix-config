@@ -14,6 +14,8 @@
         ./services.nix
         ./users.nix
         ./environment.nix
+        ./programs/fcitx5.nix
+        ./programs/clash-verge-rev.nix
       ];
     };
   };

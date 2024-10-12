@@ -9,6 +9,7 @@
         vim
         git
         vscode
+        clash-verge-rev
     ];
     environment.variables.EDITOR = "code";
 }
