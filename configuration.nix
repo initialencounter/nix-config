@@ -8,21 +8,19 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./i18n.nix
+      ./nix.nix
+      ./de/hyprland.nix
+      ./de/plasma.nix
+      ./de/fonts.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  nix.settings.substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   networking.hostName = "ie";
 
-  # Select internationalisation properties.
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-  };
   fonts = {
     packages = with pkgs; [
       noto-fonts
@@ -34,7 +32,6 @@
       jetbrains-mono
     ];
   };
-  time.timeZone = "Asia/Shanghai";
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
