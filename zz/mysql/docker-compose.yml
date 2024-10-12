@@ -1,15 +1,19 @@
 version: "3"
+networks:
+  mines_net:
+    external:
+      name: mines_net
 services:
     mysql:
+        networks:
+            - mines_net
         environment:
-            - MYSQL_ROOT_PASSWORD=''
+            MYSQL_ROOT_PASSWORD: mines_net
         volumes:
             - /root/mysql/data/conf.d/:/etc/mysql/conf.d 
             - /root/mysql/data/mysql/:/var/lib/mysql
         ports:
             - 3306:3306
         container_name: mysql
-        network_mode: bridge
-        image: mysql
+        image: hub.atomgit.com/amd64/mysql
         restart: always
-        command: /bin/bash

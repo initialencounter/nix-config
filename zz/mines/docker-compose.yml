@@ -1,12 +1,17 @@
 version: "3"
+networks:
+  mines_net:
+    external:
+      name: mines_net
 services:
     mines:
+        networks:
+            - mines_net
         volumes:
             - /root/mines:/root/mines
         ports:
-            - 2330:3000
+            - 2330:8080
         container_name: mines
-        network_mode: bridge
         image: ubuntu
         restart: always
-        command: /root/mines/mines # tail -f /dev/null
+        command: bash -c "cd /root/mines && ./mines" # tail -f /dev/null

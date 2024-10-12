@@ -7,8 +7,8 @@ services:
       - 21115:21115
       - 21116:21116 # 自定义 hbbs 映射端口
       - 21116:21116/udp # 自定义 hbbs 映射端口
-    image: reg-hub2.onrender.com/library/ubuntu
-    command: /root/hbbs -r 14.103.48.1:21117 # 填入个人域名或 IP + hbbr 暴露端口
+    image: rustdesk/rustdesk-server
+    command: hbbs -r zz.initenc.cn:21117 # 填入个人域名或 IP + hbbr 暴露端口
     volumes:
       - ./data:/root # 自定义挂载目录
     depends_on:
@@ -23,8 +23,8 @@ services:
     container_name: hbbr
     ports:
       - 21117:21117 # 自定义 hbbr 映射端口
-    image: reg-hub2.onrender.com/library/ubuntu
-    command: /root/hbbr
+    image: rustdesk/rustdesk-server
+    command: hbbr
     volumes:
       - ./data:/root # 自定义挂载目录
     restart: unless-stopped
