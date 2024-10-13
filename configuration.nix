@@ -10,11 +10,12 @@
       ./hardware-configuration.nix
       ./i18n.nix
       ./nix.nix
+      ./networking.nix
       ./de/hyprland.nix
       ./de/plasma.nix
       ./de/fonts.nix
       ./programs/arion.nix
-      ./networking.nix
+      ./xrdp.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
