@@ -2,6 +2,26 @@
 {
   # 桌面
   programs.hyprland.enable = true;
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
+
+  environment.systemPackages = with pkgs; [
+    pyprland
+    hyprpicker
+    hyprcursor
+    hyprlock
+    hypridle
+    
+    cool-retro-term
+
+    starship
+    helix
+
+    qutebrowser
+    zathura
+    mpv
+    imv
+  ];
 
   # polkit-gnome 用于让桌面应用获取 sudo 权限
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
