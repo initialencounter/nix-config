@@ -1,6 +1,7 @@
 {pkgs, ...}:{
+  # https://discourse.nixos.org/t/configuring-remote-desktop-access-with-gnome-remote-desktop/48023/4
   services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
+  services.xrdp.defaultWindowManager = "${pkgs.gnome.gnome-session}/bin/gnome-session";
   services.xrdp.openFirewall = true;
 
   # Disable the GNOME3/GDM auto-suspend feature that cannot be disabled in GUI!
@@ -11,9 +12,11 @@
   systemd.targets.hybrid-sleep.enable = false;
 
   environment.systemPackages = with pkgs; [
-    gnome-session
+    gnome-remote-desktop
   ];
-  
+
+  services.gnome.gnome-remote-desktop.enable = true;
+
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [3389];
