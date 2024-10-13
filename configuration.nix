@@ -14,6 +14,7 @@
       ./de/plasma.nix
       ./de/fonts.nix
       ./programs/arion.nix
+      ./networking.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
