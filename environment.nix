@@ -2,6 +2,8 @@
 
 {
     environment.systemPackages = with pkgs; [
+        glxinfo
+        virtualgl
         unzip
         wget
         curl

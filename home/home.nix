@@ -58,7 +58,7 @@
     gImageReader
 
     # 性能监看
-    btop
+    radeontop
     htop
     iotop # io monitoring
     iftop # network monitoring

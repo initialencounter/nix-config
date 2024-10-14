@@ -12,8 +12,14 @@
         pulse.enable = true;
     };
 
+    # Enable OpenGL
+    hardware.graphics.enable = true;
+    
     # Enable the X11 windowing system.
-    services.xserver.enable = true;
+    services.xserver = {
+        enable = true;
+        videoDrivers = [ "amdgpu" ];  # 使用amdgpu驱动
+    };
     services.xserver.desktopManager.gnome.enable = true;
     services.displayManager.sddm = {
 	enable = true;
