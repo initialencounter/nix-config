@@ -17,6 +17,7 @@
       ./programs/arion.nix
       ./programs/localsend.nix
       ./xrdp.nix
+      ./samba.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
