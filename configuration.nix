@@ -15,6 +15,7 @@
       ./de/plasma.nix
       ./de/fonts.nix
       ./programs/arion.nix
+      ./programs/localsend.nix
       ./xrdp.nix
     ];
 
