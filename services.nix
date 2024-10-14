@@ -23,4 +23,8 @@
 	};
     };
     programs.fish.enable = true;
+    services.fstrim = {
+      enable = true;
+      interval = "tuesday";  
+    };
 }
