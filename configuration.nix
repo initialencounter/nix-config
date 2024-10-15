@@ -16,6 +16,7 @@
       ./de/fonts.nix
       ./programs/arion.nix
       ./programs/localsend.nix
+      ./programs/yazi.nix
       ./xrdp.nix
       ./samba.nix
     ];
