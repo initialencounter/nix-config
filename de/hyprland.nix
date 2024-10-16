@@ -9,15 +9,24 @@
         compositor = "kwin";
       };
     };
-    defaultSession = "gnome";  # hyprland | gnome | gnome-xorg
   };
   
-  programs.hyprland.enable = true;
+  # Wayland/Hyprland configuration
+  services.displayManager.defaultSession = "hyprland"; # hyprland | gnome | gnome-xorg
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+  
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
 
   environment.systemPackages = with pkgs; [
-    pyprland
+    wofi
+    xdg-desktop-portal-hyprland
+    wayland-protocols
+    wayland-utils
+    hyprland
     hyprpicker
     hyprcursor
     hyprlock
