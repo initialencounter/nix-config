@@ -11,13 +11,14 @@
       ./i18n.nix
       ./nix.nix
       ./networking.nix
-      # ./de/hyprland.nix
-      ./de/plasma.nix
+      ./de/hyprland.nix
+      # ./de/plasma.nix
       ./de/fonts.nix
       ./programs/arion.nix
       ./programs/localsend.nix
       ./programs/yazi.nix
       ./programs/rustdesk-server.nix
+      ./programs/thunar.nix
       ./xrdp.nix
       ./samba.nix
     ];
