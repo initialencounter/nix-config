@@ -1,6 +1,17 @@
 { pkgs, ... }:
 {
   # 桌面
+  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager= {
+    sddm = {
+      wayland = {
+        enable = true;
+        compositor = "kwin";
+      };
+    };
+    defaultSession = "gnome";  # hyprland | gnome | gnome-xorg
+  };
+  
   programs.hyprland.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
@@ -11,16 +22,6 @@
     hyprcursor
     hyprlock
     hypridle
-    
-    cool-retro-term
-
-    starship
-    helix
-
-    qutebrowser
-    zathura
-    mpv
-    imv
   ];
 
   # polkit-gnome 用于让桌面应用获取 sudo 权限
