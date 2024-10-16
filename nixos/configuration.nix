@@ -17,6 +17,7 @@
       ./programs/arion.nix
       ./programs/localsend.nix
       ./programs/yazi.nix
+      ./programs/rustdesk-server.nix
       ./xrdp.nix
       ./samba.nix
     ];
