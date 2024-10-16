@@ -9,12 +9,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     vscode-server.url = "github:nix-community/nixos-vscode-server";
+    alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
   };
 
-  outputs = all@{ nixpkgs, vscode-server, home-manager, ... }:
+  outputs = all@{ nixpkgs, vscode-server, home-manager, alacritty-theme, ... }:
   {
     nixosConfigurations.ie = nixpkgs.lib.nixosSystem {
-      modules = [         
+      modules = [
+        ({ config, pkgs, ...}: {
+          # install the overlay
+          nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+        })         
         ./configuration.nix
         ./services.nix
         ./users.nix

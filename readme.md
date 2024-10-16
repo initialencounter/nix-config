@@ -3,15 +3,17 @@
 |                             | NixOS(Wayland)                                                                                                      |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------- |
 | **Window Manager**          | [Hyprland][Hyprland]                                                                                                |
+| **Terminal Emulator**       | [Alacritty][Alacritty]                                                                                              |
 | **Bar**                     | [Waybar][Waybar]                                                                                                    |
-| **Display Manager**         | [SDDM][SDDM]                                                                                                          |
+| **Display Manager**         | [SDDM][SDDM]                                                                                                        |
 | **network management tool** | [NetworkManager][NetworkManager]                                                                                    |
 | **Input method framework**  | [Fcitx5][Fcitx5]                                                                                                    |
-| **Shell**                   | [Fish][Fish]                                                                          |
+| **Shell**                   | [Fish][Fish] + [Starship][Starship]                                                                                 |
+| **File Manager**            | [Yazi][Yazi] + [thunar][thunar]                                                                                     |
 | **Media Player**            | [mpv][mpv]                                                                                                          |
 | **Image Viewer**            | [imv][imv]                                                                                                          |
 
-## Installing
+## Install
 
 ```shell
 git clone https://github.com/initialencounter/nix-config --depth=1
