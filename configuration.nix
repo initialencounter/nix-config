@@ -19,6 +19,7 @@
       ./programs/yazi.nix
       ./programs/rustdesk-server.nix
       ./programs/thunar.nix
+      ./programs/tailscale.nix
       ./xrdp.nix
       ./samba.nix
     ];
