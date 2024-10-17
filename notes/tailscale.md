@@ -7,7 +7,7 @@ age-keygen -o ageKeyFile.txt
 ## 加密secrets.yaml
 
 ```shell
-sops --age <age 私钥> --encrypt secrets.yaml > secrets.enc.yaml
+sops --age <age 公钥> --encrypt secrets.yaml > secrets.enc.yaml
                                 ^ 密码明文      ^ 加密后的文件
 ```
 
