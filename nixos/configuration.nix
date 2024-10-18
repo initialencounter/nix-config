@@ -20,6 +20,7 @@
       ./programs/rustdesk-server.nix
       ./programs/thunar.nix
       ./programs/tailscale.nix
+      ./programs/nodejs.nix
       ./xrdp.nix
       ./samba.nix
     ];
