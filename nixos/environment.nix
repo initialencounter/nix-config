@@ -2,6 +2,8 @@
 
 {
     environment.systemPackages = with pkgs; [
+        home-manager
+        nix-prefetch-git
         sops
         age
         glxinfo

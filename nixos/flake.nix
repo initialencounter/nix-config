@@ -35,7 +35,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-
+          home-manager.backupFileExtension = "bak";
           home-manager.users.ie = import ./home/home.nix;
 
           # 取消注释下面这一行，就可以在 home.nix 中使用 flake 的所有 inputs 参数了
