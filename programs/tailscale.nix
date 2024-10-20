@@ -5,7 +5,7 @@
     age.keyFile = "/root/.config/sops/age/keys.txt";
     secrets.tailscaleAuthKey = {
       format = "yaml";
-      sopsFile = ../secrets.enc.yaml;
+      sopsFile = ../secrets/enc-tailscale.yaml;
     };
   };
   # 读取解密后的 Tailscale 密钥并用于服务配置
