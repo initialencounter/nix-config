@@ -12,4 +12,10 @@
       noProxy = "127.0.0.1,localhost,internal.domain";
     };
   };
+  
+  networking.firewall = {
+    # koishi napcat
+    allowedTCPPorts = [ 5140 6099 3001 ];
+    allowedUDPPorts = [ 5140 6099 3001];
+  };
 }
