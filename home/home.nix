@@ -4,6 +4,11 @@
   # 注意修改这里的用户名与用户目录
   home.username = "ie";
   home.homeDirectory = "/home/ie";
+  nixpkgs.config.allowUnfree = true;
+
+  imports = [
+    ./koishi.nix
+  ];
 
   # 直接将当前文件夹的配置文件，链接到 Home 目录下的指定位置
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -49,9 +54,6 @@
     neofetch
     nnn # terminal file manager
 
-
-    # 聊天
-    qq
 
     # 文档
     libreoffice-fresh
