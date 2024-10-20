@@ -21,6 +21,8 @@
       ./programs/thunar.nix
       ./programs/tailscale.nix
       ./programs/nodejs.nix
+      ./programs/koishi.nix
+      ./programs/napcat.nix
       ./xrdp.nix
       ./samba.nix
     ];
