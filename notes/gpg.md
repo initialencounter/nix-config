@@ -15,4 +15,9 @@ vi ~/.gnupg/gpg-agent.conf
 pinentry-program /run/current-system/sw/bin/pinentry
 ## restart pinentry
 gpgconf --kill gpg-agent
+## 切换到bash
+bash
+export GPG_TTY=$(tty)
 ```
+
+## sign
