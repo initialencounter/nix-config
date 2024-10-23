@@ -19,6 +19,8 @@
         git
         vscode
         clash-verge-rev
+        gnupg
+        pinentry
     ];
     environment.variables.EDITOR = "code";
     environment.shellAliases = {
