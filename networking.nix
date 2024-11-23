@@ -15,7 +15,7 @@
   
   networking.firewall = {
     # koishi napcat
-    allowedTCPPorts = [ 5140 6099 3001 ];
-    allowedUDPPorts = [ 5140 6099 3001];
+    allowedTCPPorts = [ 5140 6099 3001 3000 ];
+    allowedUDPPorts = [ 5140 6099 3001 3000 ];
   };
 }
