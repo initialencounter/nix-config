@@ -11,7 +11,7 @@
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
     sops-nix.url = "github:Mic92/sops-nix";
-    llonebot.url = "github:LLOneBot/llonebot.nix";
+    llonebot.url = "github:LLOneBot/llonebot.nix"; # nix flake lock --update-input llonebot
     napcat.url = "github:initialencounter/napcat.nix";
   };
 
