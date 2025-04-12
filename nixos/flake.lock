@@ -151,11 +151,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1744392473,
-        "narHash": "sha256-IQD9ymM+ij1PErm88YqOcYLv9YMW84L+8kKiqH+EPaM=",
+        "lastModified": 1744458409,
+        "narHash": "sha256-A1v4vbDGiDfySdIzTwSTvlTHLcCbjHpDndLFkgvNzGQ=",
         "owner": "initialencounter",
         "repo": "napcat.nix",
-        "rev": "4e5011c69cd6b864232e1f958d0a9a54aa45a60c",
+        "rev": "7cce3f7b7e735f62c86e417cd66a190d12321b36",
         "type": "github"
       },
       "original": {
