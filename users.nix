@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 # Edit this configuration file to define what should be installed on
 
 {

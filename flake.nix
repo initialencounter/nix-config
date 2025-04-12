@@ -20,12 +20,11 @@
     nixosConfigurations.ie = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       modules = [
-        ({ config, pkgs, ...}: {
+        ({
           # install the overlay
           nixpkgs.overlays = [ alacritty-theme.overlays.default ];
         })
-        ({ config, pkgs, ...}: {
-          # install the overlay
+        ({ config, ...}: {
           config._module.args.inputs = inputs;
         })
         sops-nix.nixosModules.sops

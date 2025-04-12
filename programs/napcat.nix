@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 
 let 
   myNapCat = config._module.args.inputs.napcat.packages.x86_64-linux.default;
