@@ -1,5 +1,9 @@
 { pkgs, ... }:
 
+let
+  sunloginclient = pkgs.callPackage ./programs/sunlogin.nix {};
+in
+
 {
     environment.systemPackages = with pkgs; [
         screen
@@ -22,6 +26,7 @@
         clash-verge-rev
         gnupg
         pinentry
+        sunloginclient
     ];
 
     environment.variables.EDITOR = "code";
