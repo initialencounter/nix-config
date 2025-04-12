@@ -1,7 +1,12 @@
 { pkgs, config, ... }:
 
 let 
-  myLLOneBot = config._module.args.inputs.llonebot.packages.x86_64-linux.default;
+  llonebotConfig = {
+    vncport = 7081;
+    vncpassword = "mysecurepassword";
+  };
+  llonebotLib = config._module.args.inputs.llonebot.lib.x86_64-linux;
+  myLLOneBot = (llonebotLib.buildLLOneBot llonebotConfig).script;
 in
 
 {
