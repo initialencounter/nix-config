@@ -11,15 +11,22 @@
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
     sops-nix.url = "github:Mic92/sops-nix";
+    llonebot.url = "github:LLOneBot/llonebot.nix";
+    napcat.url = "github:initialencounter/napcat.nix";
   };
 
-  outputs = all@{ nixpkgs, vscode-server, home-manager, alacritty-theme, sops-nix, ... }:
+  outputs = inputs @{ nixpkgs, vscode-server, home-manager, alacritty-theme, sops-nix, ... }:
   {
-    nixosConfigurations.ie = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.ie = nixpkgs.lib.nixosSystem rec {
+      system = "x86_64-linux";
       modules = [
         ({ config, pkgs, ...}: {
           # install the overlay
           nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+        })
+        ({ config, pkgs, ...}: {
+          # install the overlay
+          config._module.args.inputs = inputs;
         })
         sops-nix.nixosModules.sops
         ./configuration.nix
@@ -39,7 +46,7 @@
           home-manager.users.ie = import ./home/home.nix;
 
           # 取消注释下面这一行，就可以在 home.nix 中使用 flake 的所有 inputs 参数了
-          # home-manager.extraSpecialArgs = inputs;
+          home-manager.extraSpecialArgs = inputs;
         }
       ];
     };
