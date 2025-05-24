@@ -1,12 +1,13 @@
-{ config, ... }:
+{ pkgs, ... }:
 
 let 
   llonebotConfig = {
     vncport = 7081;
     vncpassword = "mysecurepassword";
+    display=":666";
+    novncport = 5900;
   };
-  llonebotLib = config._module.args.inputs.llonebot.lib.x86_64-linux;
-  myLLOneBot = (llonebotLib.buildLLOneBot llonebotConfig).script;
+  myLLOneBot = (pkgs.llonebot.buildLLOneBot llonebotConfig).script;
 in
 
 {

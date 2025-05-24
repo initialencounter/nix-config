@@ -23,7 +23,7 @@
       ./programs/nodejs.nix
       ./programs/koishi.nix
       ./programs/napcat.nix
-      ./programs/llonebot.nix
+      # ./programs/llonebot.nix
       ./xrdp.nix
       ./samba.nix
     ];

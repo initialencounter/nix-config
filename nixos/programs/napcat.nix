@@ -1,8 +1,4 @@
-{ config, ... }:
-
-let 
-  myNapCat = config._module.args.inputs.napcat.packages.x86_64-linux.default;
-in
+{ pkgs, ... }:
 
 {
   systemd.services.napcat = {
@@ -12,7 +8,7 @@ in
     wantedBy = [ "multi-user.target" ];
 
     serviceConfig = {
-      ExecStart = "${myNapCat}/bin/napcat";
+      ExecStart = "${pkgs.napcat.default}/bin/napcat";
       Restart = "always";
       User = "root";  # 替换为你的用户名
     };

@@ -6,6 +6,7 @@ in
 
 {
     environment.systemPackages = with pkgs; [
+        myRepo.easytier
         jq
         screen
         gawk
