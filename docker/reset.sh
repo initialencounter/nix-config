@@ -1,22 +1,32 @@
-apt-get update git
+apt-get update
 
 # set hosts
 # vi /etc/hosts
 
+# setup fish
+
+function setupFish() {
+  apt-get install -y curl
+  curl -o fish_4.0.2-2_amd64.deb -L https://download.opensuse.org/repositories/shells:/fish:/release:/4/Debian_11/amd64/fish_4.0.2-2_amd64.deb
+  dpkg -i fish_4.0.2-2_amd64.deb
+  rm fish_4.0.2-2_amd64.deb
+  chsh /bin/fish
+}
+
 # setup starship
 function setupStarship() {
 
-apt-get install -y curl wget jq
+apt-get install -y curl jq
 
 version=$(curl "https://api.github.com/repos/starship/starship/releases/latest" | jq -r '.tag_name')
 
-wget https://mirror.ghproxy.com/https://github.com/starship/starship/releases/download/$version/starship-x86_64-unknown-linux-gnu.tar.gz
+curl -o starship.tar.gz -L https://github.com/starship/starship/releases/download/$version/starship-x86_64-unknown-linux-gnu.tar.gz
 
-tar -C /usr/local/bin -xzf starship-x86_64-unknown-linux-gnu.tar.gz starship
+tar -C /usr/local/bin -xzf starship.tar.gz starship
 
-rm starship-x86_64-unknown-linux-gnu.tar.gz
+rm starship.tar.gz
 
-echo 'eval "$(starship init bash)"' >> ~/.bashrc
+echo 'starship init fish | source' >> ~/.config/fish/config.fish
 }
 
 # setup docker
@@ -40,16 +50,5 @@ apt-get update
 apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose
 }
 
-# setup nodejs
-
-function setupNodejs() {
-  wget https://npmmirror.com/mirrors/node/v22.3.0/node-v22.3.0-linux-x64.tar.xz
-  mkdir /usr/local/nodejs
-  tar -C /usr/local/nodejs -xvf node-v22.3.0-linux-x64.tar.xz
-  echo 'export PATH=$PATH:/usr/local/nodejs/node-v22.3.0-linux-x64/bin' >> ~/.bashrc
-  rm node-v22.3.0-linux-x64.tar.xz
-  source ~/.bashrc
-}
-
 # set authorized_keys
-echo ./authorized_keys > ~/.ssh/authorized_keys
+cat ./authorized_keys > ~/.ssh/authorized_keys
