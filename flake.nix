@@ -11,8 +11,18 @@
     vscode-server.url = "github:nix-community/nixos-vscode-server";
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
     sops-nix.url = "github:Mic92/sops-nix";
-    llonebot.url = "github:LLOneBot/llonebot.nix"; # nix flake lock --update-input llonebot
-    napcat.url = "github:initialencounter/napcat.nix";
+    llonebot = {
+      url = "github:LLOneBot/llonebot.nix"; # nix flake lock --update-input llonebot
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    napcat = {
+      url = "github:initialencounter/napcat.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    myRepo = {
+      url = "github:initialencounter/nurpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @{ nixpkgs, vscode-server, home-manager, alacritty-theme, sops-nix, ... }:
@@ -24,9 +34,17 @@
           # install the overlay
           nixpkgs.overlays = [ alacritty-theme.overlays.default ];
         })
-        ({ config, ...}: {
-          config._module.args.inputs = inputs;
+
+        ({
+          nixpkgs.overlays = [
+            (final: prev: {
+              myRepo = inputs.myRepo.packages."${prev.system}";
+              napcat = inputs.napcat.packages."${prev.system}";
+              llonebot = inputs.llonebot.lib."${prev.system}";
+            })
+          ];
         })
+
         sops-nix.nixosModules.sops
         ./configuration.nix
         ./services.nix
