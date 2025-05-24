@@ -9,5 +9,5 @@ services:
             - 5140:5140
         container_name: koishi
         network_mode: bridge
-        image: reg-hub1.onrender.com/koishijs/koishi
+        image: koishijs/koishi
         restart: always

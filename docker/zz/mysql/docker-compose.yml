@@ -15,5 +15,5 @@ services:
         ports:
             - 3306:3306
         container_name: mysql
-        image: hub.atomgit.com/amd64/mysql
+        image: mysql
         restart: always
