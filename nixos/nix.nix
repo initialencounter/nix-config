@@ -9,6 +9,8 @@
       "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
     ];
 
+    build-users-group = null;  # 禁用构建组检查
+    sandbox = false;  # 可能需要同时禁用沙盒
 
     # 实验性功能
     experimental-features = [
