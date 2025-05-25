@@ -134,11 +134,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1747246156,
-        "narHash": "sha256-IOksNxd5wHAJjnLbt4p2qfHpqaaydJDDISsAIvppE8g=",
+        "lastModified": 1748167749,
+        "narHash": "sha256-8iz1/+kKHIT2V85iUXsNkpR1mtzgrttCe/LuRHiTEYU=",
         "owner": "LLOneBot",
         "repo": "llonebot.nix",
-        "rev": "bb5b47b15b08708080a732eb53162e8ee433e9ce",
+        "rev": "6be294a63cbeb830d3cf448ae96ae12e299c289d",
         "type": "github"
       },
       "original": {
