@@ -20,7 +20,6 @@ in
         wget
         curl
         firefox
-        microsoft-edge
         chromium
         vim
         git
