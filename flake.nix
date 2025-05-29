@@ -39,7 +39,7 @@
           nixpkgs.overlays = [
             (final: prev: {
               myRepo = inputs.myRepo.packages."${prev.system}";
-              napcat = inputs.napcat.packages."${prev.system}";
+              napcat = inputs.napcat.lib."${prev.system}";
               llonebot = inputs.llonebot.lib."${prev.system}";
             })
           ];
