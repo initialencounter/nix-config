@@ -4,7 +4,6 @@
   # 注意修改这里的用户名与用户目录
   home.username = "ie";
   home.homeDirectory = "/home/ie";
-  nixpkgs.config.allowUnfree = true;
 
 
   # 直接将当前文件夹的配置文件，链接到 Home 目录下的指定位置

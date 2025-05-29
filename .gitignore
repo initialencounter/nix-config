@@ -1,3 +1,4 @@
 /nixos/hardware-configuration.nix
 ciphertext-*.yaml
 koishi.yml
+nixos/base

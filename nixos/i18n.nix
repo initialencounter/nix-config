@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{pkgs, ...}:
 {
   # Select internationalisation properties.
   i18n.defaultLocale = "zh_CN.UTF-8";
@@ -34,6 +34,6 @@
     useXkbConfig = true;
   };
 
-  # 时间
+  # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 }

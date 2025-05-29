@@ -2,32 +2,22 @@
 
 {
 	services.openssh.enable = true;
-	# Configure keymap in X11
-	services.xserver.xkb.layout = "us";
-	services.xserver.xkb.options = "eurosign:e,caps:escape";
 
-	# Enable sound.
-	services.pipewire = {
-			enable = true;
-			pulse.enable = true;
-	};
+	# Enable sound with pipewire.
+  services.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
 
-	# Enable OpenGL
-	hardware.graphics.enable = true;
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
+  };
+
 	programs.fish.enable = true;
-	services.fstrim = {
-		enable = true;
-		interval = "tuesday";  
-	};
-
-	# Enable the X11 windowing system.
-	services.xserver = {
-			enable = true;
-			videoDrivers = [ "amdgpu" ];  # 使用amdgpu驱动
-	};
-	services.displayManager = {
-		sddm.enable = true;
-		autoLogin.enable = true;
-    autoLogin.user = "ie";
-	};
 }

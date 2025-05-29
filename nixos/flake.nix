@@ -2,8 +2,7 @@
   description = "ie's NixOS Configuration";
   inputs = {
     # os
-    nixpkgs.url = "git+https://mirrors.tuna.tsinghua.edu.cn/git/nixpkgs.git/?ref=nixos-unstable";
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -50,7 +49,6 @@
         ./services.nix
         ./users.nix
         ./environment.nix
-        ./programs/clash-verge-rev.nix
          vscode-server.nixosModules.default
         ./programs/vscode-server.nix
         # 将 home-manager 配置为 nixos 的一个 module
