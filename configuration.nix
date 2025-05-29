@@ -21,6 +21,7 @@
       ./programs/nodejs.nix
       ./programs/koishi.nix
       ./programs/napcat.nix
+      ./programs/clash.nix
       # ./programs/llonebot.nix
       ./xrdp.nix
       ./samba.nix
