@@ -25,7 +25,6 @@ in
         vim
         git
         vscode
-        clash-verge-rev
         gnupg
         pinentry
         sunloginclient

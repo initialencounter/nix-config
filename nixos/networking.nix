@@ -6,7 +6,7 @@
   networking = {
     hostName = "ie";
     proxy = {
-      default = "http://127.0.0.1:7897";
+      default = "http://127.0.0.1:7890";
       noProxy = "127.0.0.1,localhost,internal.domain";
     };
   };
