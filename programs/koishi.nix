@@ -1,10 +1,9 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   systemd.services.koishi = {
     enable = true;
     description = "Koishi Service";
-    after = [ "network.target" ];
-    wantedBy = [ "multi-user.target" ];
+    after = ["network.target"];
+    wantedBy = ["multi-user.target"];
     serviceConfig = {
       ExecStart = "${pkgs.yarn}/bin/yarn start";
       RestartSec = 5;
@@ -18,8 +17,8 @@
   systemd.services.zhenxun = {
     enable = true;
     description = "Koishi-zhenxun Service";
-    after = [ "network.target" ];
-    wantedBy = [ "multi-user.target" ];
+    after = ["network.target"];
+    wantedBy = ["multi-user.target"];
     serviceConfig = {
       ExecStart = "${pkgs.yarn}/bin/yarn start";
       RestartSec = 5;

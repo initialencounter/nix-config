@@ -1,9 +1,7 @@
-{ ... }:
+{...}: {
+  services.openssh.enable = true;
 
-{
-	services.openssh.enable = true;
-
-	# Enable sound with pipewire.
+  # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -19,5 +17,5 @@
     #media-session.enable = true;
   };
 
-	programs.fish.enable = true;
+  programs.fish.enable = true;
 }

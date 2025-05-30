@@ -1,4 +1,4 @@
-{pkgs, ...}:{
+{pkgs, ...}: {
   # https://discourse.nixos.org/t/configuring-remote-desktop-access-with-gnome-remote-desktop/48023/4
   services.xrdp.enable = true;
   services.xrdp.defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
