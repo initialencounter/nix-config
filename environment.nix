@@ -23,7 +23,6 @@ in
         firefox
         chromium
         vim
-        git
         vscode
         gnupg
         pinentry
