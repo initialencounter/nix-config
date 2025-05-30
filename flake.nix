@@ -49,6 +49,7 @@
         ./services.nix
         ./users.nix
         ./environment.nix
+        ./fonts.nix
          vscode-server.nixosModules.default
         ./programs/vscode-server.nix
         # 将 home-manager 配置为 nixos 的一个 module
