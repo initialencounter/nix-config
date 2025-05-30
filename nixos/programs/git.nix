@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.git = {
     enable = true;
     config = {
@@ -7,8 +10,8 @@
         name = "initialencounter";
         email = "2911583893@qq.com";
       };
-      init = { defaultBranch = "main"; };
-      pull = { rebase = false; };
+      init = {defaultBranch = "main";};
+      pull = {rebase = false;};
     };
   };
 }

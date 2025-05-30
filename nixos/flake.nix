@@ -24,17 +24,23 @@
     };
   };
 
-  outputs = inputs @{ nixpkgs, vscode-server, home-manager, alacritty-theme, sops-nix, ... }:
-  {
+  outputs = inputs @ {
+    nixpkgs,
+    vscode-server,
+    home-manager,
+    alacritty-theme,
+    sops-nix,
+    ...
+  }: {
     nixosConfigurations.ie = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       modules = [
-        ({
+        {
           # install the overlay
-          nixpkgs.overlays = [ alacritty-theme.overlays.default ];
-        })
+          nixpkgs.overlays = [alacritty-theme.overlays.default];
+        }
 
-        ({
+        {
           nixpkgs.overlays = [
             (final: prev: {
               myRepo = inputs.myRepo.packages."${prev.system}";
@@ -42,7 +48,7 @@
               llonebot = inputs.llonebot.lib."${prev.system}";
             })
           ];
-        })
+        }
 
         sops-nix.nixosModules.sops
         ./configuration.nix
@@ -50,7 +56,7 @@
         ./users.nix
         ./environment.nix
         ./fonts.nix
-         vscode-server.nixosModules.default
+        vscode-server.nixosModules.default
         ./programs/vscode-server.nix
         # 将 home-manager 配置为 nixos 的一个 module
         # 这样在 nixos-rebuild switch 时，home-manager 配置也会被自动部署
