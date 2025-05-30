@@ -27,6 +27,7 @@ in
         gnupg
         pinentry
         sunloginclient
+        alejandra
     ];
 
     environment.variables.EDITOR = "code";
