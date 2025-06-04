@@ -2,11 +2,12 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   systemd.services.clash = {
     description = "Clash a porxy tool";
-    after = ["network.target"];
-    wantedBy = ["multi-user.target"];
+    after = [ "network.target" ];
+    wantedBy = [ "multi-user.target" ];
 
     serviceConfig = {
       Type = "exec";

@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   # 注意修改这里的用户名与用户目录
   home.username = "ie";
   home.homeDirectory = "/home/ie";
@@ -151,7 +152,7 @@
     enable = true;
     # 自定义配置
     settings = {
-      import = [pkgs.alacritty-theme.citylights];
+      import = [ pkgs.alacritty-theme.citylights ];
     };
   };
 

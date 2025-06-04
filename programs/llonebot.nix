@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   llonebotConfig = {
     vncport = 7081;
     vncpassword = "mysecurepassword";
@@ -6,12 +7,13 @@
     novncport = 5900;
   };
   myLLOneBot = (pkgs.llonebot.buildLLOneBot llonebotConfig).script;
-in {
+in
+{
   systemd.services.llonebot = {
     enable = true;
     description = "LLOneBot Service";
-    after = ["network.target"];
-    wantedBy = ["multi-user.target"];
+    after = [ "network.target" ];
+    wantedBy = [ "multi-user.target" ];
 
     serviceConfig = {
       ExecStart = "${myLLOneBot}/bin/LLOneBot";

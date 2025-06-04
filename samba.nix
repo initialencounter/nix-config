@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   # https://wiki.nixos.org/wiki/Samba#Server_setup
   services.samba = {
     enable = true;

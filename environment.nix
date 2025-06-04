@@ -1,6 +1,8 @@
-{pkgs, ...}: let
-  sunloginclient = pkgs.callPackage ./programs/sunlogin.nix {};
-in {
+{ pkgs, ... }:
+let
+  sunloginclient = pkgs.callPackage ./programs/sunlogin.nix { };
+in
+{
   environment.systemPackages = with pkgs; [
     myRepo.easytier-gui
     myRepo.easytier

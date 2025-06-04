@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # https://discourse.nixos.org/t/configuring-remote-desktop-access-with-gnome-remote-desktop/48023/4
   services.xrdp.enable = true;
   services.xrdp.defaultWindowManager = "${pkgs.gnome-session}/bin/gnome-session";
@@ -19,7 +20,7 @@
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [3389];
-    allowedUDPPorts = [3389];
+    allowedTCPPorts = [ 3389 ];
+    allowedUDPPorts = [ 3389 ];
   };
 }
