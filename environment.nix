@@ -23,7 +23,7 @@ in {
     gnupg
     pinentry
     sunloginclient
-    alejandra
+    nixfmt-rfc-style
   ];
 
   environment.variables.EDITOR = "code";
