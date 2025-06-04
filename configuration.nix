@@ -20,6 +20,7 @@
     ./programs/napcat.nix
     ./programs/clash.nix
     ./programs/git.nix
+    ./programs/rust.nix
     # ./programs/llonebot.nix
     ./xrdp.nix
     ./samba.nix
