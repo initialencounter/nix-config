@@ -26,6 +26,7 @@ in
     pinentry
     sunloginclient
     nixfmt-rfc-style
+    starship
   ];
 
   environment.variables.EDITOR = "code";
