@@ -22,6 +22,7 @@
     ./programs/clash.nix
     ./programs/git.nix
     ./programs/rust.nix
+    ./programs/easytier.nix
     # ./programs/llonebot.nix
     ./xrdp.nix
     ./samba.nix
