@@ -5,15 +5,33 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;
+  services.xserver.displayManager.gdm.wayland = false;
   services.xserver.desktopManager.gnome.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    wofi
-    xdg-desktop-portal-hyprland
-    wayland-protocols
-    wayland-utils
-  ];
+  environment.systemPackages =
+    (with pkgs; [
+      wofi
+      xdg-desktop-portal-hyprland
+      gnome-tweaks
+      gnome-themes-extra
+      papirus-icon-theme
+    ])
+    ++ (with pkgs.gnomeExtensions; [
+      appindicator
+      blur-my-shell
+      burn-my-windows
+      compiz-alike-magic-lamp-effect
+      compiz-windows-effect
+      coverflow-alt-tab
+      dash-to-dock
+      fuzzy-app-search
+      hide-top-bar
+      just-perfection
+      removable-drive-menu
+      user-themes
+      night-theme-switcher
+      kimpanel
+    ]);
 
   # Configure keymap in X11
   services.xserver.xkb = {
