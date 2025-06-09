@@ -27,6 +27,7 @@ in
     sunloginclient
     nixfmt-rfc-style
     starship
+    rustdesk
   ];
 
   environment.variables.EDITOR = "code";
