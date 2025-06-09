@@ -28,6 +28,7 @@ in
     nixfmt-rfc-style
     starship
     rustdesk
+    ngrok
   ];
 
   environment.variables.EDITOR = "code";
