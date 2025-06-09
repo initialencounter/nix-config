@@ -29,6 +29,7 @@ in
     starship
     rustdesk
     ngrok
+    netease-cloud-music-gtk
   ];
 
   environment.variables.EDITOR = "code";
