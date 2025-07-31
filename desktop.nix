@@ -1,17 +1,14 @@
 { pkgs, ... }:
 {
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
+  # Enable the GNOME Desktop Environment with Wayland
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gdm.wayland = false;
+  services.xserver.displayManager.gdm.wayland = true;
   services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.gdm.autoSuspend = false;
 
   environment.systemPackages =
     (with pkgs; [
-      wofi
-      xdg-desktop-portal-hyprland
+      # Removed wofi (Hyprland-specific) and xdg-desktop-portal-hyprland
       gnome-tweaks
       gnome-themes-extra
       papirus-icon-theme
@@ -32,12 +29,6 @@
       night-theme-switcher
       kimpanel
     ]);
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "cn";
-    variant = "";
-  };
 
   # Enable automatic login for the user.
   # services.displayManager.autoLogin.enable = true;
