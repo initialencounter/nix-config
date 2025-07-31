@@ -30,6 +30,11 @@ in
     rustdesk
     ngrok
     netease-cloud-music-gtk
+    qq
+    rsync
+    binutils
+    fontconfig
+    lldb
   ];
 
   environment.variables.EDITOR = "code";
