@@ -175,11 +175,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1748174363,
-        "narHash": "sha256-7G+A4nA5qHHNEgUyaoU9g0X56z7FYQCNBOz55TdxxtQ=",
+        "lastModified": 1753973494,
+        "narHash": "sha256-WnY5IIaL1xPUk0Q0GEPFmyii9b9AuheRXoiLEYdAvyA=",
         "owner": "initialencounter",
         "repo": "napcat.nix",
-        "rev": "d02ff58402eea4dc40a7eeb6b67427d2030679a7",
+        "rev": "c649431a60dcb6fe09ab458b3aeb3be4479d6857",
         "type": "github"
       },
       "original": {
