@@ -17,6 +17,7 @@
     ./programs/thunar.nix
     ./programs/tailscale.nix
     ./programs/nodejs.nix
+    ./programs/python.nix
     ./programs/koishi.nix
     ./programs/napcat.nix
     ./programs/clash.nix
