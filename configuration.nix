@@ -27,6 +27,7 @@
     ./programs/llonebot.nix
     ./xrdp.nix
     ./samba.nix
+    ./programs/pvp.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
