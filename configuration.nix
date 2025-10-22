@@ -25,7 +25,7 @@
     ./programs/rust.nix
     ./programs/easytier.nix
     ./programs/llonebot.nix
-    ./xrdp.nix
+    ./rdp.nix
     ./samba.nix
     ./programs/pvp.nix
   ];
