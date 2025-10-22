@@ -12,7 +12,7 @@
     sops-nix.url = "github:Mic92/sops-nix";
     llonebot = {
       url = "github:LLOneBot/llonebot.nix"; # nix flake lock --update-input llonebot
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     };
     napcat = {
       url = "github:initialencounter/napcat.nix";

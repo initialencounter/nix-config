@@ -1,12 +1,10 @@
 { pkgs, ... }:
 let
   llonebotConfig = {
-    vncport = 7081;
-    vncpassword = "mysecurepassword";
-    display = ":666";
-    novncport = 5900;
+    quick_login_qq = "3111720341";
+    sandbox_root_dir = "/root/bot/zhenxun/llonebot/root";
   };
-  myLLOneBot = (pkgs.llonebot.buildLLOneBot llonebotConfig).script;
+  myLLOneBotSandbox = (pkgs.llonebot.buildLLOneBotSandbox llonebotConfig).sandbox;
 in
 {
   systemd.services.llonebot = {
@@ -16,7 +14,7 @@ in
     wantedBy = [ "multi-user.target" ];
 
     serviceConfig = {
-      ExecStart = "${myLLOneBot}/bin/LLOneBot";
+      ExecStart = "${myLLOneBotSandbox}/bin/sandbox";
       Restart = "always";
       User = "root";
     };
