@@ -68,7 +68,7 @@
     nvitop
 
     # 桌面
-    rofi-wayland
+    rofi
     waybar
     grim
     hyprpaper

@@ -4,8 +4,7 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
-    myRepo.easytier-gui
-    myRepo.easytier
+    easytier
     jq
     screen
     gawk
