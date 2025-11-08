@@ -132,11 +132,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1761481203,
-        "narHash": "sha256-pycgPfLK1ihCFzAfOUgipb0iz/1RydPkxqdAPqVVITA=",
+        "lastModified": 1762259091,
+        "narHash": "sha256-bbm1C3xW/Cqki/dk33W4PepvYW8ityxU5nBF1hzICJU=",
         "owner": "LLOneBot",
         "repo": "llonebot.nix",
-        "rev": "fc3e5081bb2de8dba3882c43f354cfd19c2bc82d",
+        "rev": "dad39f9b45ab48cf12c48bd6b2698c7b697c3cbd",
         "type": "github"
       },
       "original": {
